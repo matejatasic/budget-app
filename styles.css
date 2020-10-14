@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: radial-gradient( #3d7ebf, #2788e8);
+}
+
+.heading {
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.container {
+    margin: 4rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1.5rem;
+}
+
+.col1 {
+    width: 35%;
+    height: 30%;
+}
+
+.row form {
+    border: 2.5px solid black;
+    border-radius: 3px;
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+    color: white;
+}
+
+#budgetWarning,
+#expenseWarning {
+    display: none;
+    background-color: rgba(247, 33, 33, 0.5);
+    font-size: 1.5rem;
+    width: 100%;
+    margin-bottom: 0.7rem;
+    padding: 10% 0;
+    padding-left: 1rem;
+}
+
+.col,
+.col2 {
+    width: 16%;
+    font-size: 1.6rem;
+    text-align: center;
+    color: white;
+}
+
+.col i {
+    font-size: 3.8rem;
+    color: #023263;
+    margin: 1rem 0;
+}
+
+.col p {
+    font-size: 2.8rem;
+}
+
+.col2 {
+    font-size: 1.4rem;
+}
+
+.col2 p{
+    font-size: 1.2rem;
+}
+
+#budgetForm {
+    border: 2.5px solid rgb(19, 100, 53);
+}
+
+#expenseForm {
+    border: 2.5px solid rgb(128, 18, 18);
+}
+
+/* p element next to this i class */
+.fa-money-check-alt + p {
+    color: rgb(19, 100, 53);
+}
+
+/* p element next to this i class */
+.fa-credit-card + p {
+    color: rgb(128, 18, 18);
+}
+
+/* This is the style for the second h4 in second form*/
+#expenseForm :nth-child(3){
+    margin-top: 1.2rem;
+}
+
+.row form input[type="number"],
+.row form input[type="text"] {
+    font-size: 2rem;
+    padding: 0.5rem 0;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.row form input[type="submit"],
+.row form input[type="button"]{
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+#budgetForm input[type="number"] {
+    border: 3px solid rgb(19, 100, 53);
+}
+
+#expenseForm input[type="number"],
+#expenseForm input[type="text"]{
+    border: 3px solid rgb(128, 18, 18);
+}
+
+#calculateBtn {
+    border: 2.5px solid rgb(19, 100, 53);
+    background-color: transparent;
+    color: rgb(19, 100, 53);
+    transition: 0.3s;
+}
+
+#calculateBtn:hover {
+    color: #3d7ebf;
+    background-color: rgb(19, 100, 53);
+    cursor: pointer; 
+}
+
+#expenseBtn {
+    border: 2.5px solid rgb(128, 18, 18);
+    background-color: transparent;
+    color: rgb(128, 18, 18);
+    transition: 0.3s;
+}
+
+#expenseBtn:hover {
+    color: #3d7ebf;
+    background-color: rgb(128, 18, 18);
+    cursor: pointer; 
+}
+
+.expenseRow {
+    height: 2rem;
+}
+
+.heading1 {
+    height: 3rem;
+}
+
+.btn {
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.editBtn {
+    color: rgb(19, 100, 53);
+    border: 0.5px solid rgb(19, 100, 53);
+    background-color: transparent;
+}
+
+.deleteBtn {
+    color: rgb(128, 18, 18);
+    border: 1px solid rgb(128, 18, 18);
+    background-color: transparent;
+}
+
+.editBtn:hover {
+    color: #3d7ebf;
+    background-color: rgb(19, 100, 53);
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    color: #3d7ebf;
+    background-color: rgb(128, 18, 18);
+    cursor: pointer;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- heading -->
+    <div class="heading">
+        <h1>Budget App</h1>
+    </div>
+    <!-- !heading -->
+
+    <!-- main -->
+    <div class="container">
+        <!-- row1 -->
+        <div class="row">
+            <!-- budget form -->
+            <div class="col1">
+                <div id="budgetWarning">
+                    <p>Value cannot be empty or negative</p>
+                </div>
+                <form method="POST" id="budgetForm">
+                    <h4>Please Enter Your Budget</h4>
+                    <input type="number" id="budgetInput" name="budget">
+                    <input type="button" id="calculateBtn" name="calculateBtn" value="Calculate">  
+                </form>
+            </div>
+            <!-- !budget form -->
+            <!-- total amounts output -->
+            <div class="col">
+                <h4>Budget</h4>
+                <i class="fas fa-money-check-alt"></i>
+                <p>$ <span id="budgetAmount">0</span></p>
+            </div>
+            <div class="col">
+                <h4>Expenses</h4>
+                <i class="far fa-credit-card"></i>
+                <p>$ <span id="expenseAmount"> 0</span></p>
+            </div>
+            <div class="col">
+                <h4>Balance</h4>
+                <i class="fas fa-dollar-sign"></i>
+                <p>$ <span id="balance"> 0</span></p>
+            </div>
+            <!-- !total amounts output -->
+        </div>
+        <!-- !row1 -->
+        <!-- row2 -->
+        <div class="row">
+            <!-- expense form -->
+            <div class="col1">
+                <div id="expenseWarning">
+                    <p>Value cannot be empty or negative</p>
+                </div>
+                <form method="POST" id="expenseForm">
+                    <h4>Please Enter Your Expense</h4>
+                    <input type="text" id="expenseName" name="expenseName">
+                    <h4>Please Enter Your Expense Amount</h4>
+                    <input type="number" id="expenseInput" name="expenseInput">
+                    <input type="button" id="expenseBtn" name="expenseBtn" value="Add Expense"> 
+                </form>
+            </div>
+            <!-- !expense form -->
+            <!-- expense output -->
+            <div class="col2">
+                <div class="heading1">
+                    <h4>Expense Title</h4>
+                </div>
+                <div id="expenseNameOut"></div>
+            </div>
+            <div class="col2">
+                <div class="heading1">
+                    <h4>Expense Amount</h4>
+                </div>
+                <div id="expenseQtyOut"></div>
+            </div>
+            <div class="col2">
+                <div class="heading1"></div>
+                <div id="edit">
+                    
+                </div>
+            </div>
+            <!-- expense output -->
+        </div>
+        <!-- !row2 -->
+    </div>
+    <!-- !main -->
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/f9d2d5cb9c.js" crossorigin="anonymous"></script>
+
+    <!-- Custom js -->
+    <script src="app.js"></script>
+</body>
+</html>
