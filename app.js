@@ -88,7 +88,7 @@ function showExpense(name, value) {
     count++;
 }
 
-//Show warning if empty input fields
+//Shows warning if input fields are empty
 function showWarning(input, warning) {
     if(input.length === 0) {
         warning.style.display = 'block';
@@ -98,7 +98,7 @@ function showWarning(input, warning) {
     }
 }
 
-//Edit one expense and update balance
+//Edits one expense and updates balance
 function editExp(e) {
     let classList = e.classList[0];
     let elements = document.getElementsByClassName(classList);
@@ -109,7 +109,7 @@ function editExp(e) {
     deleteExp(e); 
 }
 
-//Delete one expense and update balance
+//Deletes one expense and updates balance
 function deleteExp(e) { 
     let classList = e.classList[0];
     let expAmount = document.getElementsByClassName(classList+'a')[0].textContent;
