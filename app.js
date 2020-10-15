@@ -23,43 +23,46 @@ expenseBtn.addEventListener('click', addExpense);
 //Functions
 function enterBudget() {
     let inputVal = budgetInput.value;
-    let expenseVal = expenseAmount.textContent;
-
-    showWarning(inputVal, budgetWarning);
-
-    budgetAmount.textContent = inputVal;
-    budgetInput.value = '';
-    showBalance(inputVal,expenseVal);
+    if(inputVal === '') {
+        showWarning(budgetWarning);
+    }
+    else {
+        budgetAmount.textContent = inputVal;
+        budgetInput.value = '';
+        showBalance();
+    }
 }
 
 //Adds the amount to total expense
 function addExpense() {
     let expenseNameVal = expenseName.value;
     let expenseVal = expenseInput.value;
-    
-    showWarning(expenseNameVal, expenseWarning);
-    showWarning(expenseVal, expenseWarning);
-    showExpense(expenseNameVal, expenseVal);
+    if(expenseNameVal === '' || expenseVal === '') {
+        showWarning(expenseWarning);
+    }
+    else {
+        showExpense(expenseNameVal, expenseVal);
 
-    expenseName.value = '';
-    expenseInput.value = '';
-    expenseNum += parseInt(expenseVal); 
-    expenseAmount.textContent = expenseNum;
-    showBalance(budgetAmount.textContent, expenseAmount.textContent);
+        expenseName.value = '';
+        expenseInput.value = '';
+        expenseNum += parseInt(expenseVal); 
+        expenseAmount.textContent = expenseNum;
+        showBalance();
+    }
 }
 
 //Calculates the balance according to budget and total expense
-function showBalance(budget, expense) {
-    let difference = budget - expense;
-    let prevSib = document.getElementsByClassName('fa-dollar-sign');
+function showBalance() {
+    let balancePar = document.getElementById('balancePar');
+    let difference = budgetAmount.textContent- expenseAmount.textContent;
     
     if(difference >= 0) {
         balance.textContent = difference;
-        prevSib[0].nextElementSibling.style.color = 'rgb(19, 100, 53)';
+        balancePar.style.color = 'rgb(19, 100, 53)';
     }
     else if(difference < 0) {
         balance.textContent = difference;
-        prevSib[0].nextElementSibling.style.color = 'rgb(128, 18, 18)';
+        balancePar.style.color = 'rgb(128, 18, 18)';
     }
 }
 
@@ -88,28 +91,27 @@ function showExpense(name, value) {
     count++;
 }
 
-//Shows warning if input fields are empty
-function showWarning(input, warning) {
-    if(input.length === 0) {
-        warning.style.display = 'block';
-        setTimeout(() => {
-            warning.style.display = 'none';
-        }, 4000);
-    }
+//Show warning if empty input fields
+function showWarning(warning) {
+    warning.style.display = 'block';
+    setTimeout(() => {
+        warning.style.display = 'none';
+    }, 4000);
 }
 
-//Edits one expense and updates balance
+//Edit one expense and update balance
 function editExp(e) {
     let classList = e.classList[0];
     let elements = document.getElementsByClassName(classList);
     let name = elements[0].children[0];
     let value = elements[1].children[0].children[0];
+    
     expenseName.value = name.textContent; 
     expenseInput.value = value.textContent;
     deleteExp(e); 
 }
 
-//Deletes one expense and updates balance
+//Delete one expense and update balance
 function deleteExp(e) { 
     let classList = e.classList[0];
     let expAmount = document.getElementsByClassName(classList+'a')[0].textContent;
@@ -121,5 +123,5 @@ function deleteExp(e) {
     
     expenseNum -= expAmount;
     expenseAmount.textContent = expenseNum;
-    showBalance(budgetAmount.textContent, expenseAmount.textContent); 
+    showBalance(); 
 }
