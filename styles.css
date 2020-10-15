@@ -90,13 +90,11 @@ body {
     border: 2.5px solid rgb(128, 18, 18);
 }
 
-/* p element next to this i class */
-.fa-money-check-alt + p {
+#budgetPar {
     color: rgb(19, 100, 53);
 }
 
-/* p element next to this i class */
-.fa-credit-card + p {
+#expensePar {
     color: rgb(128, 18, 18);
 }
 
