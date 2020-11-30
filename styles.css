@@ -75,7 +75,9 @@ body {
 }
 
 .col2 {
+    margin-left: 4rem;
     font-size: 1.4rem;
+    text-align: center;
 }
 
 .col2 p{
@@ -156,12 +158,21 @@ body {
     cursor: pointer; 
 }
 
+.expenseOutRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    margin: 1.5rem;
+}
+
 .expenseRow {
     height: 2rem;
 }
 
 .heading1 {
     height: 3rem;
+    margin-bottom: 1rem;
 }
 
 .btn {
@@ -191,4 +202,48 @@ body {
     color: #3d7ebf;
     background-color: rgb(128, 18, 18);
     cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .container {
+        margin: 0;
+    }
+    .row {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .col1 {
+        width: 100%;
+    }
+    
+    #budgetForm, #expenseForm {
+        width: 80%;
+        margin: 2rem auto;
+    }
+
+    .col {
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .col i, .col p {
+        font-size: 3rem;
+    }
+
+    .expenseOutRow {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .expenseRow .col2 {
+        width: 30%;
+        margin-left: 2rem;
+    }
+    
+    .heading1 h4, #expenseNameOut div, 
+    #expenseQtyOut div, #edit div {
+        text-align: center;
+        margin: 1rem auto;
+    }
 }
